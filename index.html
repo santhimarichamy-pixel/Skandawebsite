@@ -3,50 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- ADVANCED B2B SEO METADATA -->
-    <title>SkandaTechnology | Semiconductor JEDEC Tray Manufacturing & Reconditioning</title>
-    <meta name="description" content="Fixed-price, factory-grade semiconductor packaging solutions. Custom injection molded JEDEC matrix trays, anti-static SMT reels, and circular economy packaging reconditioning. Built strictly to JEP95 and ESD standards. Serving Metro Atlanta, GA and global OSAT lines.">
-    <meta name="keywords" content="JEDEC Trays, Waffle Packs, Semiconductor Packaging, IC Shipping Trays, SMT Component Reels, ESD Tray Testing, Cleanroom Packaging Logistics, Atlanta Electronic Manufacturing Services">
-    <meta name="author" content="SkandaTechnology">
-    <meta name="robots" content="index, follow">
-      <style>
+    <title>SkandaTechnology | Semiconductor Packaging Storefront</title>
+    <meta name="description" content="Fixed-price, factory-grade semiconductor packaging solutions. Custom injection molded JEDEC matrix trays and circular economy packaging logistics.">
+    <style>
         :root {
-            --bg-color: #f4f5f7;        /* Clean Light Gray Background */
-            --surface: #ffffff;         /* Crisp White Container Cards */
-            --surface-accent: #f8f9fa;  /* Subtle Gray Input Boxes */
-            --text-main: #1d1d1f;       /* Deep Charcoal Text for Readability */
-            --text-muted: #6e6e73;      /* Clean Muted Accent Text */
-            --accent: #0071e3;          /* Vibrant Electric Blue */
-            --accent-success: #24b24b;  /* Vibrant Status Indicator Green */
-            --border: #d2d2d7;          /* Soft Structural Dividers */
+            --bg-color: #f4f5f7;
+            --surface: #ffffff;
+            --surface-accent: #f8f9fa;
+            --text-main: #1d1d1f;
+            --text-muted: #6e6e73;
+            --accent: #0071e3;
+            --accent-success: #24b24b;
+            --border: #d2d2d7;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding: 40px 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            background-color: var(--bg-color); color: var(--text-main); padding: 40px 20px;
         }
         .container { max-width: 1100px; margin: 0 auto; }
         header {
-            margin-bottom: 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 20px;
+            margin-bottom: 50px; display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 1px solid var(--border); padding-bottom: 20px;
         }
-        .logo { font-weight: 700; font-size: 24px; letter-spacing: -0.5px; }
-        .tagline-nav { color: var(--text-muted); font-size: 14px; }
+        .logo { font-weight: 700; font-size: 24px; letter-spacing: -0.5px; text-decoration: none; color: var(--text-main); }
+        nav a { margin-left: 20px; text-decoration: none; color: var(--text-muted); font-size: 14px; font-weight: 500; }
+        nav a:hover, nav a.active { color: var(--accent); }
         h1 { font-size: 40px; font-weight: 700; letter-spacing: -1px; margin-bottom: 16px; }
         p.hero-text { font-size: 16px; color: var(--text-muted); margin-bottom: 40px; max-width: 800px; }
-        
-        /* 3-Column Layout */
-        .grid-system { display: grid; grid-template-columns: 1.2fr 1fr; gap: 30px; margin-top: 20px; }
+        .grid-system { display: grid; grid-template-columns: 1.2fr 1fr; gap: 30px; }
         @media (max-width: 900px) { .grid-system { grid-template-columns: 1fr; } }
-        
         .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 25px; margin-bottom: 25px; }
         .form-group { margin-bottom: 15px; }
         label { display: block; font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; }
@@ -54,96 +40,108 @@
             width: 100%; background: var(--surface-accent); border: 1px solid var(--border); color: var(--text-main);
             padding: 10px; border-radius: 6px; font-size: 14px; outline: none;
         }
-        
         .price-display {
             background: var(--bg-color); border: 1px solid var(--border); border-radius: 8px;
             padding: 15px; margin-top: 20px; display: flex; justify-content: space-between; align-items: center;
         }
         .price-amount { font-size: 24px; font-weight: 700; }
         .timeline-badge { font-size: 12px; padding: 4px 10px; border-radius: 20px; background: rgba(0, 113, 227, 0.15); color: var(--accent); font-weight: 600; }
-        
         .submit-btn {
             display: block; width: 100%; text-align: center; background: var(--text-main); color: var(--bg-color);
             padding: 12px; border-radius: 6px; font-weight: 600; text-decoration: none; margin-top: 15px; font-size: 15px;
         }
-
-        /* FAQ Styling */
-        .faq-item { border-bottom: 1px solid var(--border); padding: 15px 0; }
-        .faq-question { font-size: 15px; font-weight: 600; cursor: pointer; color: var(--text-main); display: flex; justify-content: space-between; }
-        .faq-answer { font-size: 14px; color: var(--text-muted); margin-top: 8px; display: none; }
-        
-        /* Chatbot UI Interface */
-        .chat-container { display: flex; flex-direction: column; height: 350px; background: var(--surface-accent); border-radius: 8px; border: 1px solid var(--border); margin-top: 15px; }
-        .chat-log { flex: 1; padding: 15px; overflow-y: auto; font-size: 13px; display: flex; flex-direction: column; gap: 10px; }
-        .chat-msg { padding: 8px 12px; border-radius: 6px; max-width: 85%; }
-        .msg-ai { background: var(--surface); color: var(--text-main); align-self: flex-start; border: 1px solid var(--border); }
-        .msg-user { background: var(--accent); color: white; align-self: flex-end; }
-        .chat-input-area { display: flex; border-top: 1px solid var(--border); }
-        .chat-input { flex: 1; background: transparent; border: none; color: white; padding: 12px; font-size: 13px; outline: none; }
-        .chat-send { background: var(--text-main); color: var(--bg-color); border: none; padding: 0 15px; font-weight: 600; cursor: pointer; font-size: 12px; }
-
+        .submit-btn:hover { opacity: 0.9; }
+        .catalog-list { list-style: none; margin-top: 15px; }
+        .catalog-list li { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .catalog-list li:last-child { border: none; }
+        .catalog-list span { font-weight: 600; color: var(--accent); }
         footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12px; color: var(--text-muted); text-align: center; }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <div class="logo">SkandaTechnology</div>
-            <div class="tagline-nav">JEDEC Matrix Compliance | Supply Infrastructure</div>
+            <a href="index.html" class="logo">SkandaTechnology</a>
+            <nav>
+                <a href="index.html" class="active">Products & Store</a>
+                <a href="about.html">About Corporate</a>
+                <a href="portal.html">Client Portal</a>
+            </nav>
         </header>
 
         <main>
-            <h1>Automated Semiconductor Carrier Logistics.</h1>
-            <p class="hero-text">
-                Bypassing the manual quote barrier. Instantly evaluate technical tolerances, catalog pricing, and cleanroom tracking logs for both new and structurally reconditioned silicon shipping media components.
-            </p>
+            <h1>The Self-Serve Infrastructure for Semiconductor Packaging.</h1>
+            <p class="hero-text">Bypassing the manual quote barrier. Instantly configure, evaluate technical parameters, and order standard JEDEC carrier media at verified fixed-tier pricing structures.</p>
 
             <div class="grid-system">
-                <!-- Left Hand Column: Procurement and FAQ -->
-                <div>
-                    <div class="card">
-                        <h3>Self-Serve Order Configuration</h3>
-                        <div style="margin-top: 15px;">
-                            <div class="form-group">
-                                <label for="part-type">Packaging Form Factor</label>
-                                <select id="part-type" onchange="calculatePrice()">
-                                    <option value="high-temp">Premium High-Temp Baking Trays (MPP/PPE)</option>
-                                    <option value="low-temp">Standard Low-Temp Shipping Trays (PS/ABS)</option>
-                                    <option value="waffle">IC Waffle Packs & Gel-Paks (Thin Die)</option>
-                                    <option value="reels">Anti-Static SMT Packaging Reels</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="spec-type">Engineering Profile</label>
-                                <select id="spec-type" onchange="calculatePrice()">
-                                    <option value="standard">Standard JEDEC Matrix Outlines (Matrix Ready)</option>
-                                    <option value="custom">Non-Standard Blueprint Adaptations (Tooling Required)</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="quantity">Procurement Quantity</label>
-                                <input type="number" id="quantity" value="250" min="10" oninput="calculatePrice()">
-                            </div>
-                            <div class="price-display">
-                                <div>
-                                    <div style="font-size:11px; color:var(--text-muted); text-transform:uppercase;">Fixed Cost Allocation</div>
-                                    <div class="price-amount" id="total-price">$875.00</div>
-                                </div>
-                                <div class="timeline-badge" id="timeline-output">2-Day Delivery</div>
-                            </div>
-                            <a href="#" id="mailto-btn" class="submit-btn">Lock In Batch Dispatch</a>
+                <div class="card">
+                    <h3>Configure Production Batch</h3>
+                    <div style="margin-top: 15px;">
+                        <div class="form-group">
+                            <label for="part-type">Packaging Form Factor</label>
+                            <select id="part-type" onchange="calculatePrice()">
+                                <option value="high-temp">Premium High-Temp Baking Trays (MPP/PPE)</option>
+                                <option value="low-temp">Standard Low-Temp Shipping Trays (PS/ABS)</option>
+                                <option value="waffle">IC Waffle Packs & Gel-Paks (Thin Die)</option>
+                                <option value="reels">Anti-Static SMT Packaging Reels</option>
+                            </select>
                         </div>
+                        <div class="form-group">
+                            <label for="spec-type">Engineering Profile</label>
+                            <select id="spec-type" onchange="calculatePrice()">
+                                <option value="standard">Standard JEDEC Matrix Outlines (In Stock)</option>
+                                <option value="custom">Non-Standard Blueprint Adaptations (+14 Days)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Procurement Quantity (Units)</label>
+                            <input type="number" id="quantity" value="250" min="10" oninput="calculatePrice()">
+                        </div>
+                        <div class="price-display">
+                            <div>
+                                <label>Fixed Cost Allocation</label>
+                                <div class="price-amount" id="total-price">\$875.00</div>
+                            </div>
+                            <div class="timeline-badge" id="timeline-output">In-Stock / 2-Day Delivery</div>
+                        </div>
+                        <a href="#" id="mailto-btn" class="submit-btn">Add to Cart & Request Dispatch</a>
                     </div>
+                </div>
 
-                    <div class="card">
-                        <h3>Technical Engineering FAQ</h3>
-                        <div class="faq-item">
-                            <div class="faq-question" onclick="toggleFaq(this)">What engineering standards do reconditioned trays follow? <span>+</span></div>
-                            <div class="faq-answer">All processing runs strictly comply with JEDEC JEP95 standards. Every individual tray goes through high-resolution optical coplanarity sorting to eliminate warp and pocket twist limits down to ±0.08mm limits, ensuring perfect pickup performance for automated robots.</div>
-                        </div>
-                        <div class="faq-item">
-                            <div class="faq-question" onclick="toggleFaq(this)">How are premium trays validated against electrostatic discharge (ESD)? <span>+</span></div>
-                            <div class="faq-answer">Trays are subjected to multi-point surface resistivity analysis via standard double-probe megohmmeter tracking. We strictly certify static-dissipative values between 10⁵ and 10¹¹ ohms/sq. Verification readouts are etched into every structural shipment.</div>
-                        </div>
-                        <div class="faq-item">
-                            <div class="faq-question" onclick="toggleFaq(this)">What is the process for completely custom tray requests? <span>+</span></div>
+                <div class="card">
+                    <h3>Verified Unified Parts Catalog</h3>
+                    <p style="color: var(--text-muted); font-size: 13px;">All hardware components carry guaranteed transparent fixed base metrics:</p>
+                    <ul class="catalog-list">
+                        <li>Premium High-Temp Trays <span>\$3.50 base/unit</span></li>
+                        <li>Standard Low-Temp Carriers <span>\$1.50 base/unit</span></li>
+                        <li>IC Waffle Packs (Thin Die) <span>\$2.20 base/unit</span></li>
+                        <li>SMT Carrier Tape Reels <span>\$0.85 base/unit</span></li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+        <footer>&copy; 2026 SkandaTechnology. Solutions engineered for automated high-speed electronics assembly lines.</footer>
+    </div>
+
+    <script>
+        function calculatePrice() {
+            const partType = document.getElementById('part-type').value;
+            const specType = document.getElementById('spec-type').value;
+            const quantity = parseInt(document.getElementById('quantity').value) || 0;
+            let pricePerUnit = 3.50; let leadTime = "2-Day Delivery";
+            if (partType === 'high-temp') pricePerUnit = 3.50;
+            else if (partType === 'low-temp') pricePerUnit = 1.50;
+            else if (partType === 'waffle') pricePerUnit = 2.20;
+            else if (partType === 'reels') pricePerUnit = 0.85;
+            if (quantity >= 1000) pricePerUnit *= 0.80; else if (quantity >= 500) pricePerUnit *= 0.90;
+            if (specType === 'custom') { pricePerUnit += 1.50; leadTime = "14-Day Production Run"; }
+            else { leadTime = "In Stock / 2-Day Delivery"; }
+            const totalCost = pricePerUnit * quantity;
+            document.getElementById('total-price').innerText = "\$" + totalCost.toFixed(2);
+            document.getElementById('timeline-output').innerText = leadTime;
+            document.getElementById('mailto-btn').href = `mailto:santhi.marichamy@://skandatechnology.com Web Order Request&body=Requesting dispatch allocation of ${quantity} units of ${partType} packaging profiles. Est Total: $${totalCost.toFixed(2)}.`;
+        }
+        calculatePrice();
+    </script>
+</body>
+</html>
