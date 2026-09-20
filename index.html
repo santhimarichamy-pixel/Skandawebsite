@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkandaTechnology | Semiconductor Packaging Solutions</title>
+    <title>SkandaTechnology | Semiconductor Component & Packaging Storefront</title>
     <style>
         :root {
             --bg-color: #0f1115;
+            --surface: #161920;
             --text-main: #ffffff;
             --text-muted: #8a8f98;
             --accent: #0071e3;
+            --accent-success: #34c759;
             --border: #23262d;
+            --input-bg: #1c202a;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -20,111 +23,156 @@
             line-height: 1.6;
             padding: 40px 20px;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+        .container { max-width: 1000px; margin: 0 auto; }
         header {
             margin-bottom: 60px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
         }
-        .logo {
-            font-weight: 700;
-            font-size: 20px;
-            letter-spacing: -0.5px;
+        .logo { font-weight: 700; font-size: 22px; letter-spacing: -0.5px; }
+        .tagline-nav { color: var(--text-muted); font-size: 14px; }
+        h1 { font-size: 38px; font-weight: 700; letter-spacing: -1px; margin-bottom: 16px; }
+        p.hero-text { font-size: 16px; color: var(--text-muted); margin-bottom: 40px; max-width: 750px; }
+        
+        /* Grid Layout */
+        .store-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
+        @media (max-width: 768px) { .store-layout { grid-template-columns: 1fr; } }
+        
+        /* Interactive Ordering Card */
+        .order-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 30px; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; }
+        select, input {
+            width: 100%; background: var(--input-bg); border: 1px solid var(--border); color: var(--text-main);
+            padding: 12px; border-radius: 6px; font-size: 15px; outline: none;
         }
-        .contact-link {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 14px;
+        select:focus, input:focus { border-color: var(--accent); }
+        
+        /* Dynamic Pricing Output Display */
+        .price-display {
+            background: var(--bg-color); border: 1px solid var(--border); border-radius: 8px;
+            padding: 20px; margin-top: 24px; display: flex; justify-content: space-between; align-items: center;
         }
-        .contact-link:hover { color: var(--text-main); }
-        h1 {
-            font-size: 42px;
-            font-weight: 700;
-            line-height: 1.15;
-            letter-spacing: -1px;
-            margin-bottom: 24px;
+        .price-amount { font-size: 28px; font-weight: 700; color: var(--text-main); }
+        .timeline-badge { font-size: 13px; padding: 4px 10px; border-radius: 20px; background: rgba(0, 113, 227, 0.15); color: var(--accent); font-weight: 600; }
+        
+        .submit-btn {
+            display: block; width: 100%; text-align: center; background: var(--text-main); color: var(--bg-color);
+            padding: 14px; border-radius: 6px; font-weight: 600; text-decoration: none; margin-top: 20px; font-size: 16px;
         }
-        p.hero-text {
-            font-size: 18px;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-            max-width: 680px;
-        }
-        .cta-btn {
-            display: inline-block;
-            background-color: var(--text-main);
-            color: var(--bg-color);
-            padding: 12px 24px;
-            border-radius: 6px;
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 15px;
-            transition: opacity 0.2s;
-        }
-        .cta-btn:hover { opacity: 0.9; }
-        .specs-grid {
-            margin-top: 80px;
-            border-top: 1px solid var(--border);
-            padding-top: 40px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-        @media (max-width: 600px) {
-            .specs-grid { grid-template-columns: 1fr; gap: 24px; }
-            h1 { font-size: 32px; }
-        }
-        .spec-item h3 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        .spec-item p {
-            font-size: 14px;
-            color: var(--text-muted);
-        }
-        footer {
-            margin-top: 100px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
-            font-size: 13px;
-            color: var(--text-muted);
-        }
+        .submit-btn:hover { opacity: 0.9; }
+
+        /* Tracking & Catalog Panels */
+        .info-panel { display: flex; flex-direction: column; gap: 30px; }
+        .panel-box { border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+        .panel-box h3 { font-size: 18px; margin-bottom: 12px; font-weight: 600; }
+        .catalog-list { list-style: none; }
+        .catalog-list li { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .catalog-list li:last-child { border: none; }
+        .catalog-list span { color: var(--text-muted); }
+
+        /* Real-time Tracker Component */
+        .tracker-status { display: flex; align-items: center; gap: 12px; margin-top: 15px; background: #1c202a; padding: 12px; border-radius: 6px; }
+        .pulse-dot { width: 10px; height: 10px; background: var(--accent-success); border-radius: 50%; box-shadow: 0 0 0 0 rgba(52, 199, 89, 0.7); animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 199, 89, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(52, 199, 89, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 199, 89, 0); } }
+
+        footer { margin-top: 80px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-muted); text-align: center; }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <div class="logo">SkandaTechnology</div>
-            <a href="mailto:santhi.marichamy@skandatechnology.com" class="contact-link">Contact</a>
+            <div class="tagline-nav">B2B Fixed-Price Component Logistics</div>
         </header>
 
         <main>
-            <h1>Semiconductor Tray Manufacturing & Reconditioning Solutions.</h1>
+            <h1>The Self-Serve Infrastructure for Semiconductor Packaging.</h1>
             <p class="hero-text">
-                SkandaTechnology engineered packaging products are built to absolute JEDEC standards. We manufacture new high-performance matrix trays and provide certified circular economy reconditioning, micro-cleaning, and ESD testing for regional semiconductor supply chains.
+                Bypassing the friction of traditional manual RFQ cycles. Instantly configure, track, and order standard JEDEC matrix packaging media, premium high-temp trays, and custom-manufactured hardware options at verified fixed-tier pricing structures.
             </p>
-            <a href="mailto:santhi.marichamy@://skandatechnology.com regarding JEDEC Tray Solutions" class="cta-btn">Contact Logistics</a>
 
-            <div class="specs-grid">
-                <div class="spec-item">
-                    <h3>New Tray Manufacturing</h3>
-                    <p>High-precision custom injection molding built to rigid structural tolerances for complex automated packaging pick-and-place lines.</p>
+            <div class="store-layout">
+                <!-- Interactive Parameter Ordering Block -->
+                <div class="order-card">
+                    <h3>Configure Production Batch</h3>
+                    <p style="color: var(--text-muted); font-size:14px; margin-bottom:20px;">Select parameters for instant algorithmic cost extraction.</p>
+                    
+                    <div class="form-group">
+                        <label for="part-type">Component Category</label>
+                        <select id="part-type" onchange="calculatePrice()">
+                            <option value="high-temp">Premium High-Temp Baking Trays (MPP/PPE)</option>
+                            <option value="low-temp">Standard Low-Temp Shipping Trays (PS/ABS)</option>
+                            <option value="waffle">IC Waffle Packs & Gel-Paks (Bare Die)</option>
+                            <option value="reels">Anti-Static SMT Storage Reels</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="spec-type">Dimensional Profile</label>
+                        <select id="spec-type" onchange="calculatePrice()">
+                            <option value="standard">Standard JEDEC Dimensions (In-Stock / Matrix Ready)</option>
+                            <option value="custom">Non-Standard / Custom Dimension Profile (Molding Required)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantity">Order Quantity (Units)</label>
+                        <input type="number" id="quantity" value="100" min="10" oninput="calculatePrice()">
+                    </div>
+
+                    <div class="price-display">
+                        <div>
+                            <div style="font-size:12px; color:var(--text-muted); text-transform:uppercase; font-weight:600;">Est. Procurement Cost</div>
+                            <div class="price-amount" id="total-price">$300.00</div>
+                        </div>
+                        <div class="timeline-badge" id="timeline-output">2-Day Delivery</div>
+                    </div>
+
+                    <a href="#" id="mailto-btn" class="submit-btn">Dispatch Order Request</a>
                 </div>
-                <div class="spec-item">
-                    <h3>Technical Reconditioning</h3>
-                    <p>Advanced geometric testing for warp, multi-stage ultrasonic micro-cleaning, dehumidification baking, and surface resistivity verification.</p>
+
+                <!-- Live Tracking Dashboard & Multi-Parts Catalog Panel -->
+                <div class="info-panel">
+                    <div class="panel-box">
+                        <h3>Active Fleet & Batch Tracker</h3>
+                        <p style="color: var(--text-muted); font-size:14px;">Enter your Skanda PO tracking ID below to check live geometric metrology and ESD validation status.</p>
+                        <input type="text" value="SK-4092-X" style="margin-top:12px; padding:8px; font-size:14px;" readonly>
+                        <div class="tracker-status">
+                            <div class="pulse-dot"></div>
+                            <div style="font-size:14px; font-weight:500;">
+                                Batch Status: <span style="color:var(--accent-success);">Phase 4 - ESD Surface Resistivity Certified</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-box">
+                        <h3>Expanded Cross-Store Components</h3>
+                        <p style="color: var(--text-muted); font-size:13px; margin-bottom:12px;">Standard catalog components available for unified dispatch logistics:</p>
+                        <ul class="catalog-list">
+                            <li>Carrier Tape & Cover Tape Reels <span>Fixed Tier Pricing</span></li>
+                            <li>Silicon Wafer Shippers (Concentric) <span>Fixed Tier Pricing</span></li>
+                            <li>Precision Pick-and-Place Nozzles <span>Fixed Tier Pricing</span></li>
+                            <li>Cleanroom Static-Shielding MBB Bags <span>Fixed Tier Pricing</span></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </main>
 
         <footer>
-            &copy; 2026 SkandaTechnology. Metro Atlanta, GA. Solutions engineered for zero-waste semiconductor logistics.
+            &copy; 2026 SkandaTechnology. Solutions engineered for automated high-speed electronics assembly lines.
         </footer>
     </div>
-</body>
-</html>
+
+    <script>
+        function calculatePrice() {
+            const partType = document.getElementById('part-type').value;
+            const specType = document.getElementById('spec-type').value;
+            const quantity = parseInt(document.getElementById('quantity').value) || 0;
+            
+            let basePricePerUnit = 3.00;
+            let leadTime = "2-Day Delivery";
