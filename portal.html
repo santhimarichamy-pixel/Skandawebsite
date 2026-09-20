@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Client Portal | SkandaTechnology</title>
+    <style>
+        :root {
+            --bg-color: #f4f5f7; --surface: #ffffff; --surface-accent: #f8f9fa; --text-main: #1d1d1f; --text-muted: #6e6e73; --accent: #0071e3; --accent-success: #24b24b; --border: #d2d2d7;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background-color: var(--bg-color); color: var(--text-main); padding: 40px 20px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        header { margin-bottom: 50px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
+        .logo { font-weight: 700; font-size: 24px; text-decoration: none; color: var(--text-main); }
+        nav a { margin-left: 20px; text-decoration: none; color: var(--text-muted); font-size: 14px; }
+        nav a:hover, nav a.active { color: var(--accent); }
+        h1 { font-size: 32px; margin-bottom: 10px; letter-spacing: -0.5px; text-align: center; }
+        p.subtitle { text-align: center; color: var(--text-muted); font-size: 14px; margin-bottom: 30px; }
+        .login-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 35px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; }
+        input { width: 100%; background: var(--surface-accent); border: 1px solid var(--border); color: var(--text-main); padding: 12px; border-radius: 6px; font-size: 14px; outline: none; }
+        .portal-btn { display: block; width: 100%; text-align: center; background: var(--accent); color: white; padding: 12px; border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 15px; border: none; cursor: pointer; }
+        .secure-notice { margin-top: 20px; text-align: center; font-size: 12px; color: var(--text-muted); display: flex; align-items: center; justify-content: center; gap: 6px; }
+        footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12px; color: var(--text-muted); text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html" class="logo">SkandaTechnology</a>
+            <nav>
+                <a href="index.html">Products & Store</a>
+                <a href="about.html">About Corporate</a>
+                <a href="portal.html" class="active">Client Portal</a>
+            </nav>
+        </header>
+        <main>
+            <h1>Enterprise Supply Tracking</h1>
+            <p class="subtitle">Access geometric validation telemetry and active batch metrics.</p>
+            <div class="login-card">
+                <div class="form-group">
+                    <label>Corporate Account ID</label>
+                    <input type="text" placeholder="e.g., AMD-ATLANTA-88">
+                </div>
+                <div class="form-group">
+                    <label>Secure Access Token</label>
+                    <input type="password" placeholder="••••••••••••">
+                </div>
+                <button class="portal-btn" onclick="alert('Verification protocol active. Awaiting secondary master database linkage.')">Authenticate Connection</button>
+                <div class="secure-notice">
+                    🔒 Encrypted End-to-End B2B Data Pipeline
+                </div>
+            </div>
+        </main>
+        <footer>&copy; 2026 SkandaTechnology. Infrastructure Supply Core.</footer>
+    </div>
+</body>
+</html>
