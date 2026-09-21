@@ -20,11 +20,11 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
             background-color: var(--bg-color); color: var(--text-main); padding: 40px 20px;
         }
-        .container { max-width: 1100px; margin: 0 auto; }
+        .container { max-width: 900px; margin: 0 auto; }
         
-        /* Unified Global Header Layout */
+        /* Global Brand Navigation Header */
         header {
-            margin-bottom: 50px; display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 40px; display: flex; justify-content: space-between; align-items: center;
             border-bottom: 1px solid var(--border); padding-bottom: 20px;
         }
         .logo { font-weight: 700; font-size: 24px; letter-spacing: -0.5px; text-decoration: none; color: var(--accent); }
@@ -32,28 +32,19 @@
         nav a { margin-left: 20px; text-decoration: none; color: var(--text-muted); font-size: 14px; font-weight: 600; }
         nav a:hover, nav a.active { color: var(--accent); }
         
-        /* Hero Blueprint */
-        .hero { margin-bottom: 40px; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 40px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
-        .hero-text h1 { font-size: 40px; font-weight: 700; line-height: 1.15; margin-bottom: 15px; letter-spacing: -1px; }
-        .hero-text p { font-size: 16px; color: var(--text-muted); margin-bottom: 25px; }
+        h1 { font-size: 38px; font-weight: 700; line-height: 1.2; margin-bottom: 15px; letter-spacing: -0.5px; }
+        p.hero-text { font-size: 16px; color: var(--text-muted); margin-bottom: 35px; }
         
-        /* Structural Visual Graphics */
-        .schematic-box { background: var(--bg-color); border: 1px dashed var(--border); border-radius: 12px; height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        .jedec-grid { width: 120px; height: 120px; background: #23262d; border-radius: 6px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; padding: 10px; }
-        .pocket { background: #161920; border: 1px solid #3a3f4d; border-radius: 3px; }
-        .label { margin-top: 10px; font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px; }
+        .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.02); }
+        h3 { font-size: 20px; margin-bottom: 15px; font-weight: 700; }
 
-        /* Sectors Section */
-        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 40px; }
-        @media (max-width: 768px) { .grid-3 { grid-template-columns: 1fr; } .hero { grid-template-columns: 1fr; } }
-        .sector-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
-        .sector-card h3 { font-size: 18px; margin-bottom: 10px; color: var(--accent); }
-        .sector-card p { font-size: 14px; color: var(--text-muted); }
+        /* INTERACTIVE INDUSTRIAL CARRIER SCHEMATIC PICTURE */
+        .product-graphic-container { background: #161920; border: 1px solid #23262d; border-radius: 12px; padding: 30px; display: flex; flex-direction: column; align-items: center; gap: 15px; margin-bottom: 35px; color: #ffffff; }
+        .matrix-tray-canvas { width: 100%; max-width: 450px; background: #23262d; border: 2px solid #3a3f4d; border-radius: 6px; padding: 15px; display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; box-shadow: 0 12px 24px rgba(0,0,0,0.3); }
+        .tray-pocket-node { background: #161920; border: 1px solid #4a5264; border-radius: 4px; aspect-ratio: 1; transition: background 0.2s; cursor: pointer; }
+        .tray-pocket-node:hover { background: var(--accent); border-color: #ffffff; }
+        .graphic-caption { font-size: 12px; color: #8a8f98; text-transform: uppercase; font-weight: 700; letter-spacing: 1px; text-align: center; }
 
-        /* Workspace Core Layout Grid */
-        .main-layout { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 30px; }
-        @media (max-width: 900px) { .main-layout { grid-template-columns: 1fr; } }
-        .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 30px; margin-bottom: 25px; }
         .form-group { margin-bottom: 15px; }
         label { display: block; font-size: 11px; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; }
         select, input { width: 100%; background: var(--surface-accent); border: 1px solid var(--border); color: var(--text-main); padding: 12px; border-radius: 8px; font-size: 14px; outline: none; }
@@ -63,15 +54,15 @@
         .timeline-badge { font-size: 12px; padding: 6px 12px; border-radius: 20px; background: rgba(0, 113, 227, 0.1); color: var(--accent); font-weight: 700; }
         .submit-btn { display: block; width: 100%; text-align: center; background: var(--text-main); color: var(--surface); padding: 14px; border-radius: 8px; font-weight: 600; text-decoration: none; margin-top: 20px; font-size: 15px; }
 
-        /* Prominent AI Operational Specialist Interface */
-        .chat-container { display: flex; flex-direction: column; height: 380px; background: var(--surface-accent); border-radius: 8px; border: 1px solid var(--border); margin-top: 15px; }
-        .chat-log { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; font-size: 13px; }
+        /* CENTER-LOCKED SKANDA AI BOT INTERACTIVE SUITE */
+        .chat-container { display: flex; flex-direction: column; height: 400px; background: var(--surface-accent); border-radius: 8px; border: 1px solid var(--border); margin-top: 15px; }
+        .chat-log { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; font-size: 14px; }
         .msg { padding: 10px 14px; border-radius: 8px; max-width: 85%; line-height: 1.4; }
-        .msg-ai { background: var(--surface); color: var(--text-main); align-self: flex-start; border: 1px solid var(--border); }
+        .msg-ai { background: var(--surface); color: var(--text-main); align-self: flex-start; border: 1px solid var(--border); box-shadow: 0 2px 4px rgba(0,0,0,0.01); }
         .msg-user { background: var(--accent); color: white; align-self: flex-end; }
-        .chat-input-row { display: flex; border-top: 1px solid var(--border); background: var(--surface); }
-        .chat-input { flex: 1; background: transparent; border: none; padding: 12px; font-size: 13px; color: var(--text-main); outline: none; }
-        .chat-btn { background: var(--text-main); color: var(--surface); border: none; padding: 0 20px; font-weight: 600; cursor: pointer; }
+        .chat-input-row { display: flex; border-top: 1px solid var(--border); background: var(--surface); border-radius: 0 0 8px 8px; }
+        .chat-input { flex: 1; background: transparent; border: none; padding: 15px; font-size: 14px; color: var(--text-main); outline: none; }
+        .chat-btn { background: var(--text-main); color: var(--surface); border: none; padding: 0 25px; font-weight: 600; cursor: pointer; border-radius: 0 0 8px 0; }
 
         footer { margin-top: 80px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12px; color: var(--text-muted); text-align: center; }
     </style>
@@ -87,41 +78,25 @@
             </nav>
         </header>
 
-        <section class="hero">
-            <div class="hero-text">
-                <h1>Self-Serve Microelectronics Component Packaging.</h1>
-                <p>Eliminate manual quoting pipelines. Access immediate fixed-tier inventory parameters for high-precision, JEDEC-compliant packaging media components and certified reconditioning layouts.</p>
-            </div>
-            <div class="schematic-box">
-                <div class="jedec-grid">
-                    <div class="pocket"></div><div class="pocket"></div><div class="pocket"></div><div class="pocket"></div>
-                    <div class="pocket"></div><div class="pocket"></div><div class="pocket"></div><div class="pocket"></div>
-                    <div class="pocket"></div><div class="pocket"></div><div class="pocket"></div><div class="pocket"></div>
-                    <div class="pocket"></div><div class="pocket"></div><div class="pocket"></div><div class="pocket"></div>
+        <main>
+            <h1>B2B Self-Serve Microelectronics Packaging.</h1>
+            <p class="hero-text">Eliminate traditional manual quoting barriers. Interact with our digital component blueprints below to verify structural parameters, target pricing, and live inventory allocations.</p>
+
+            <!-- INTERACTIVE CARRIER PRODUCT IMAGE BLOCK -->
+            <section class="product-graphic-container">
+                <div class="matrix-tray-canvas">
+                    <!-- 24-Pocket Matrix Core Simulation Grid -->
+                    <div class="tray-pocket-node" onclick="registerClick(1)"></div><div class="tray-pocket-node" onclick="registerClick(2)"></div><div class="tray-pocket-node" onclick="registerClick(3)"></div><div class="tray-pocket-node" onclick="registerClick(4)"></div><div class="tray-pocket-node" onclick="registerClick(5)"></div><div class="tray-pocket-node" onclick="registerClick(6)"></div>
+                    <div class="tray-pocket-node" onclick="registerClick(7)"></div><div class="tray-pocket-node" onclick="registerClick(8)"></div><div class="tray-pocket-node" onclick="registerClick(9)"></div><div class="tray-pocket-node" onclick="registerClick(10)"></div><div class="tray-pocket-node" onclick="registerClick(11)"></div><div class="tray-pocket-node" onclick="registerClick(12)"></div>
+                    <div class="tray-pocket-node" onclick="registerClick(13)"></div><div class="tray-pocket-node" onclick="registerClick(14)"></div><div class="tray-pocket-node" onclick="registerClick(15)"></div><div class="tray-pocket-node" onclick="registerClick(16)"></div><div class="tray-pocket-node" onclick="registerClick(17)"></div><div class="tray-pocket-node" onclick="registerClick(18)"></div>
+                    <div class="tray-pocket-node" onclick="registerClick(19)"></div><div class="tray-pocket-node" onclick="registerClick(20)"></div><div class="tray-pocket-node" onclick="registerClick(21)"></div><div class="tray-pocket-node" onclick="registerClick(22)"></div><div class="tray-pocket-node" onclick="registerClick(23)"></div><div class="tray-pocket-node" onclick="registerClick(24)"></div>
                 </div>
-                <div class="label">JEDEC JEP95 Matrix Architecture</div>
-            </div>
-        </section>
+                <div class="graphic-caption" id="graphic-status">Interactive Blueprint: Click pockets to test pick-and-place nozzle geometry limits</div>
+            </section>
 
-        <h2 style="font-size: 20px; font-weight: 700; margin-bottom: 20px;">Target Segments Served</h2>
-        <section class="grid-3">
-            <div class="sector-card">
-                <h3>Semiconductor Fabs & OSAT</h3>
-                <p>Immediate volume deployment of premium high-temperature bakeable carrier media without upfront injection tooling expenses.</p>
-            </div>
-            <div class="sector-card">
-                <h3>PCB Assembly Operations</h3>
-                <p>Surface-mount technology (SMT) production facilities seeking clear margin procurement cost savings down to 40%.</p>
-            </div>
-            <div class="sector-card">
-                <h3>Testing Labs & Distributors</h3>
-                <p>Specialized component evaluation hubs requiring rigorous cleanroom structural protection and static dissipation validation.</p>
-            </div>
-        </section>
-
-        <div class="main-layout">
+            <!-- PROCUREMENT LOGISTICS CARD -->
             <div class="card">
-                <h3>Dynamic Procurement Engine</h3>
+                <h3>Dynamic Procurement Configuration</h3>
                 <div style="margin-top: 15px;">
                     <div class="form-group">
                         <label for="part-type">Carrier Geometry Type</label>
@@ -146,3 +121,6 @@
                     <div class="price-display">
                         <div>
                             <label>Fixed Base Valuation</label>
+                            <div class="price-amount" id="total-price">\$875.00</div>
+                        </div>
+                        <div class="timeline-badge" id="timeline-output">In-Stock / 2-Day Delivery</div>
