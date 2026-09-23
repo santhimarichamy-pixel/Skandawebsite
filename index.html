@@ -1525,72 +1525,104 @@
             </div>
 
 
-            <form action="https://formspree.io/f/xqpabgda" method="POST">
+    <form class="contact-form" id="quoteForm"
+      action="https://formspree.io/f/xqpabgda"
+      method="POST">
 
-  <label for="name">Name</label>
-  <input
-    type="text"
-    id="name"
-    name="name"
-    placeholder="Your name"
-    required
-  >
+    <div class="form-grid">
 
-  <label for="company">Company</label>
-  <input
-    type="text"
-    id="company"
-    name="company"
-    placeholder="Company name"
-    required
-  >
+        <div class="form-group">
+            <label for="name">Name *</label>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                required>
+        </div>
 
-  <label for="email">Business Email</label>
-  <input
-    type="email"
-    id="email"
-    name="email"
-    placeholder="you@company.com"
-    required
-  >
+        <div class="form-group">
+            <label for="company">Company *</label>
+            <input
+                type="text"
+                id="company"
+                name="company"
+                required>
+        </div>
 
-  <label for="phone">Phone</label>
-  <input
-    type="tel"
-    id="phone"
-    name="phone"
-    placeholder="Optional"
-  >
+        <div class="form-group">
+            <label for="email">Business Email *</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                required>
+        </div>
 
-  <label for="interest">What are you interested in?</label>
-  <select id="interest" name="interest" required>
-    <option value="">Select an option</option>
-    <option value="Reconditioned JEDEC Trays">Reconditioned JEDEC Trays</option>
-    <option value="Tray Collection">Tray Collection</option>
-    <option value="New JEDEC Trays">New JEDEC Trays</option>
-    <option value="Custom Tray Manufacturing">Custom Tray Manufacturing</option>
-    <option value="Sustainability Program">Sustainability / Circular Tray Program</option>
-    <option value="Other">Other</option>
-  </select>
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input
+                type="tel"
+                id="phone"
+                name="phone">
+        </div>
 
-  <label for="quantity">Estimated Quantity</label>
-  <input
-    type="text"
-    id="quantity"
-    name="quantity"
-    placeholder="Example: 500 trays/month"
-  >
+        <div class="form-group">
+            <label for="interest">What are you interested in? *</label>
+            <select id="interest" name="interest" required>
+                <option value="">Select an option</option>
+                <option value="Reconditioned JEDEC Trays">Reconditioned JEDEC Trays</option>
+                <option value="Tray Collection">Tray Collection</option>
+                <option value="New JEDEC Trays">New JEDEC Trays</option>
+                <option value="Custom Tray Manufacturing">Custom Tray Manufacturing</option>
+                <option value="Sustainability / Circular Tray Program">Sustainability / Circular Tray Program</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
 
-  <label for="message">Tell us about your requirement</label>
-  <textarea
-    id="message"
-    name="message"
-    rows="5"
-    placeholder="Tray dimensions, part/package type, material, current challenge, etc."
-    required
-  ></textarea>
+        <div class="form-group">
+            <label for="quantity">Estimated Quantity</label>
+            <input
+                type="text"
+                id="quantity"
+                name="quantity"
+                placeholder="Example: 500 trays/month">
+        </div>
 
-  <button type="submit">Request a Quote</button>
+    </div>
+
+    <div class="form-group">
+        <label for="message">Tell us about your requirement *</label>
+        <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Tray dimensions, package type, material, current challenge, etc."
+            required></textarea>
+    </div>
+
+    <button type="submit" id="quoteSubmitButton">
+        Request a Quote
+    </button>
+
+    <div id="quoteSuccess"
+         style="display:none; margin-top:24px; padding:20px; border:1px solid #d1d5db; border-radius:10px; background:#f9fafb;">
+
+        <strong>Request Received</strong>
+
+        <p style="margin:8px 0 0;">
+            Thank you for contacting Skanda Technology.
+            We've received your request and will review your requirements.
+            Our team will follow up with you regarding the next steps.
+        </p>
+
+    </div>
+
+    <div id="quoteError"
+         style="display:none; margin-top:20px; padding:16px; border:1px solid #d1d5db; border-radius:10px;">
+
+        We couldn't submit your request. Please try again or contact us directly.
+
+    </div>
 
 </form>
 
@@ -1664,6 +1696,45 @@
         });
 
     });
+    const quoteForm = document.getElementById("quoteForm");
+const quoteSuccess = document.getElementById("quoteSuccess");
+const quoteError = document.getElementById("quoteError");
+const quoteSubmitButton = document.getElementById("quoteSubmitButton");
+
+if (quoteForm) {
+    quoteForm.addEventListener("submit", async function(event) {
+        event.preventDefault();
+
+        quoteSubmitButton.disabled = true;
+        quoteSubmitButton.textContent = "Sending...";
+        quoteError.style.display = "none";
+
+        try {
+            const response = await fetch(quoteForm.action, {
+                method: "POST",
+                body: new FormData(quoteForm),
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+
+            if (response.ok) {
+                quoteForm.reset();
+                quoteSuccess.style.display = "block";
+                quoteSubmitButton.style.display = "none";
+            } else {
+                quoteError.style.display = "block";
+                quoteSubmitButton.disabled = false;
+                quoteSubmitButton.textContent = "Request a Quote";
+            }
+
+        } catch (error) {
+            quoteError.style.display = "block";
+            quoteSubmitButton.disabled = false;
+            quoteSubmitButton.textContent = "Request a Quote";
+        }
+    });
+}
 </script>
 
 </body>
