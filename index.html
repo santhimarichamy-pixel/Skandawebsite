@@ -1525,255 +1525,74 @@
             </div>
 
 
-            <form class="contact-form"
-                  action="mailto:info@skandatechnology.com"
-                  method="post"
-                  enctype="text/plain">
-
-                <div class="form-grid">
-
-                    <div class="form-group">
-
-                        <label for="name">
-                            Name *
-                        </label>
-
-                        <input
-                            type="text"
-                            id="name"
-                            name="Name"
-                            required>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="company">
-                            Company *
-                        </label>
-
-                        <input
-                            type="text"
-                            id="company"
-                            name="Company"
-                            required>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="email">
-                            Business Email *
-                        </label>
-
-                        <input
-                            type="email"
-                            id="email"
-                            name="Email"
-                            required>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="phone">
-                            Phone
-                        </label>
-
-                        <input
-                            type="tel"
-                            id="phone"
-                            name="Phone">
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="role">
-                            Role
-                        </label>
-
-                        <select id="role" name="Role">
-
-                            <option value="">
-                                Select
-                            </option>
-
-                            <option>
-                                Procurement
-                            </option>
-
-                            <option>
-                                Packaging Engineering
-                            </option>
-
-                            <option>
-                                Manufacturing / Operations
-                            </option>
-
-                            <option>
-                                Supplier Quality
-                            </option>
-
-                            <option>
-                                Sustainability
-                            </option>
-
-                            <option>
-                                Other
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="interest">
-                            I'm Interested In
-                        </label>
-
-                        <select id="interest" name="Interest">
-
-                            <option value="">
-                                Select
-                            </option>
-
-                            <option>
-                                Reconditioned JEDEC Trays
-                            </option>
-
-                            <option>
-                                New JEDEC Trays
-                            </option>
-
-                            <option>
-                                Custom Trays
-                            </option>
-
-                            <option>
-                                Tray Collection
-                            </option>
-
-                            <option>
-                                Reconditioning Pilot
-                            </option>
-
-                            <option>
-                                Not Sure
-
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="volume">
-                            Estimated Volume
-                        </label>
-
-                        <select id="volume" name="Estimated Volume">
-
-                            <option value="">
-                                Select
-                            </option>
-
-                            <option>
-                                Under 1,000
-                            </option>
-
-                            <option>
-                                1,000 - 10,000
-                            </option>
-
-                            <option>
-                                10,000 - 100,000
-                            </option>
-
-                            <option>
-                                100,000+
-                            </option>
-
-                            <option>
-                                Not Sure
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="empty">
-                            Empty Trays Available?
-                        </label>
-
-                        <select id="empty" name="Empty Trays Available">
-
-                            <option value="">
-                                Select
-                            </option>
-
-                            <option>
-                                Yes
-                            </option>
-
-                            <option>
-                                No
-                            </option>
-
-                            <option>
-                                Not Sure
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div class="form-group full">
-
-                        <label for="message">
-                            Tell us about your requirement *
-                        </label>
-
-                        <textarea
-                            id="message"
-                            name="Message"
-                            placeholder="Tray type, dimensions, quantity, current issue, application, or anything else you would like us to review."
-                            required></textarea>
-
-                    </div>
-
-
-                    <div class="form-group full">
-
-                        <button
-                            type="submit"
-                            class="button button-primary">
-                            Send Request
-                        </button>
-
-                    </div>
-
-                </div>
-
-                <div class="form-note">
-                    This form currently opens your email client. We will
-                    replace this with a proper web contact form once the
-                    website structure is finalized.
-                </div>
-
-            </form>
+            <form action="https://formspree.io/f/xqpabgda" method="POST">
+
+  <label for="name">Name</label>
+  <input
+    type="text"
+    id="name"
+    name="name"
+    placeholder="Your name"
+    required
+  >
+
+  <label for="company">Company</label>
+  <input
+    type="text"
+    id="company"
+    name="company"
+    placeholder="Company name"
+    required
+  >
+
+  <label for="email">Business Email</label>
+  <input
+    type="email"
+    id="email"
+    name="email"
+    placeholder="you@company.com"
+    required
+  >
+
+  <label for="phone">Phone</label>
+  <input
+    type="tel"
+    id="phone"
+    name="phone"
+    placeholder="Optional"
+  >
+
+  <label for="interest">What are you interested in?</label>
+  <select id="interest" name="interest" required>
+    <option value="">Select an option</option>
+    <option value="Reconditioned JEDEC Trays">Reconditioned JEDEC Trays</option>
+    <option value="Tray Collection">Tray Collection</option>
+    <option value="New JEDEC Trays">New JEDEC Trays</option>
+    <option value="Custom Tray Manufacturing">Custom Tray Manufacturing</option>
+    <option value="Sustainability Program">Sustainability / Circular Tray Program</option>
+    <option value="Other">Other</option>
+  </select>
+
+  <label for="quantity">Estimated Quantity</label>
+  <input
+    type="text"
+    id="quantity"
+    name="quantity"
+    placeholder="Example: 500 trays/month"
+  >
+
+  <label for="message">Tell us about your requirement</label>
+  <textarea
+    id="message"
+    name="message"
+    rows="5"
+    placeholder="Tray dimensions, part/package type, material, current challenge, etc."
+    required
+  ></textarea>
+
+  <button type="submit">Request a Quote</button>
+
+</form>
 
         </div>
 
